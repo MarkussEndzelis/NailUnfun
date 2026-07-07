@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NailUnfun</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="rage-widget">
+            <span class="rage-label">RAGE LEVEL:</span>
+            <div class="rage-bar-container">
+                <div id="rageBar" class="rage-bar"></div>
+            </div>
+            <span id="ragePercent" class="rage-text">0%</span>
+        </div>
+
+        <header>
+            <h1 class="logo">nail<span>.unfun</span></h1>
+            <p class="tagline">The web's most unsatisfying and stressfull experiences.</p>
+        </header>
+
+        <main class="arcade-grid">
+            <div class="card active-card" onclick="alert('Error 409: Your presence is frustrating this server. Try reloading in 4 business days.')">
+                 <div class="card-icon">🔒</div>
+                 <div class="card-body">
+                    <h2 class="card-title">The Captcha Simulator</h2>
+                    <p class="card-desc">Identify the traffic light, but every time you click one, it slowly fades into a crosswalk.</p>
+                    <span class="status-tag playable">PLAY NOW</span>
+                 </div>
+            </div>
+
+            <div class="card active-card" onclick="alert('Transaction Desclared Insolvent. Capital Gains Tax has seized your digital wallet.')">
+                <div class="card-icon">💸</div>
+                <div class="card-body">
+                    <h2 class="card-title">Lose Bill Gates' Money</h2>
+                    <p class="card-desc">You start with $150 Billion, but hyperinflation hits at 4,000% per millisecond. Hurry up.</p>
+                    <span class="status-tag playable">PLAY NOW</span>
+                </div>
+            </div>
+
+            <div class="card active-card" onclick="alert('99.9% achieved. Rejected. True perfection requires structural divinity.')">
+                <div class="card-icon">⭕</div>
+                <div class="card-body">
+                    <h2 class="card-title">The Imperfect Circle</h2>
+                    <p class="card-desc">Draw a perfect circle, but the canvas actively moves away from your cursor input.</p>
+                    <span class="status-tag playable">PLAY NOW</span>
+                </div>
+            </div>
+
+            <div class="card locked-card">
+                <div class="card-icon">🚧</div>
+                <div class="card-body">
+                    <h2 class="card-title">Progress Bar Simulator</h2>
+                    <p class="card-desc">Stuck permanently at 99%. Moves backwards if you move your mouse or blink.</p>
+                    <span class="status-tag locked">DEVELOPING ANNOYANCE</span>
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+            <p>Proudly unoptimized.</p>
+        </footer>
+
+        <script src="script.js"></script>
+
+    </body>
+</html>
