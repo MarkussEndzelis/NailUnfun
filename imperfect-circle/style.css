@@ -1,0 +1,232 @@
+/* Systems Reset & Font Integration */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #030305;
+    color: #00ff66;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+}
+
+.matrix-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(3, 3, 5, 0.95);
+    border: 1px solid #00ff66;
+    padding: 15px;
+    width: 320px;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    z-index: 100;
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.1);
+}
+
+.matrix-header {
+    font-weight: bold;
+    border-bottom: 1px dashed #00ff66;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.matrix-stat span {
+    color: #ffffff;
+    float: right;
+}
+
+.control-tower {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto 1.5rem auto;
+    background: #09090e;
+    border: 1px solid #141424;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.tower-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.tower-instruction {
+    font-size: 0.85rem;
+    color: #888899;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: #ff3333;
+    font-weight: bold;
+}
+
+.live-score-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    border-top: 1px dashed #141424;
+    padding-top: 0.75rem;
+}
+
+.score-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.node-label {
+    font-size: 0.65rem;
+    color: #555566;
+    letter-spacing: 1px;
+}
+
+.node-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.canvas-container {
+    flex-grow: 1;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    background: #050508;
+    border: 2px solid #00ff66;
+    position: relative;
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.canvas-crosshair {
+    position: absolute;
+    background: rgba(0, 255, 102, 0.05);
+    pointer-events: none;
+}
+
+.canvas-crosshair.horizontal {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+}
+
+.canvas-crosshair.vertical {
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+}
+
+.canvas-warning-text {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ff3333;
+    font-size: 0.9rem;
+    font-weight: bold;
+    pointer-events: none;
+    text-shadow: 0 0 5px rgba(255, 51, 51, 0.4);
+}
+
+.console-pipeline {
+    max-width: 900px;
+    width: 100%;
+    margin: 1rem auto;
+    background: #020204;
+    border: 1px solid #11111a;
+    height: 90px;
+    overflow-y: hidden;
+    padding: 10px;
+    font-size: 0.75rem;
+}
+
+.log-line {
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text-muted { color: #444455; }
+.text-error { color: #ff3333; }
+.text-success { color: #00ff66; }
+.text-warn { color: #ffcc00; }
+
+.action-dock {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn {
+    flex: 1;
+    background: transparent;
+    padding: 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid;
+    transition: all 0.15s ease;
+}
+
+.btn-danger {
+    border-color: #ff3333;
+    color: #ff3333;
+}
+
+.btn-danger:hover {
+    background: #ff3333;
+    color: #030305;
+    box-shadow: 0 0 10px rgba(255, 51, 51, 0.3);
+}
+
+.btn-success {
+    border-color: #00ff66;
+    color: #00ff66;
+}
+
+.btn-success:hover {
+    background: #00ff66;
+    color: #030305;
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+}
+
+.back-link {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    color: #444455;
+    text-decoration: none;
+    font-size: 0.75rem;
+    z-index: 200;
+}
+
+.back-link:hover {
+    color: #00ff66;
+}

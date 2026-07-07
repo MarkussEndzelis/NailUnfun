@@ -1,3 +1,8 @@
+:root {
+    --terminal-accent: #ff3e3e;
+    --terminal-glow: rgba(255, 62, 62, 0.2);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,13 +12,14 @@
 
 body {
     background-color: #050508;
-    color: #ff3e3e;
+    color: var(--terminal-accent);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 3rem 2rem;
     overflow-x: hidden;
     position: relative;
+    transition: color 0.1s ease;
 }
 
 .rage-widget {
@@ -21,13 +27,14 @@ body {
     top: 20px;
     right: 20px;
     background: #110505;
-    border: 2px solid #ff3e3e;
+    border: 2px solid var(--terminal-accent);
     padding: 10px 15px;
     display: flex;
     align-items: center;
     gap: 15px;
-    box-shadow: 0 0 15px rgba(255, 62, 62, 0.2);
+    box-shadow: 0 0 15px var(--terminal-glow);
     z-index: 1000;
+    transition: border-color 0.1s ease, box-shadow 0.1s ease;
 }
 
 .rage-label {
@@ -40,7 +47,7 @@ body {
     width: 150px;
     height: 14px;
     background: #220a0a;
-    border: 1px solid #ff3e3e;
+    border: 1px solid var(--terminal-accent);
     overflow: hidden;
 }
 
@@ -48,17 +55,18 @@ body {
     width: 0%;
     height: 100%;
     background: linear-gradient(90deg, #ff3e3e, #ff0055);
-    transition: width 0.1s ease-out;
+    transition: width 0.08s linear;
 }
 
 .rage-text {
     font-size: 0.9rem;
     min-width: 40px;
     text-align: right;
+    color: #ffffff;
 }
 
 header {
-    text-align: cetner;
+    text-align: center;
     max-width: 800px;
     margin: 0 auto 4rem auto;
 }
@@ -69,19 +77,19 @@ header {
     font-weight: 900;
     letter-spacing: -2px;
     color: #ffffff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 3px 3px 0px #ff3e3e;
-    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 3px 3px 0px var(--terminal-accent);
 }
 
 .logo span {
-    color: #ff3e3e;
-    text-shadow: 0 0 10px rgba(255, 62, 62, 0.5), 3px 3px 0px #ffffff;
+    color: var(--terminal-accent);
+    text-shadow: 0 0 10px var(--terminal-glow), 3px 3px 0px #ffffff;
 }
 
 .tagline {
     color: #8a8a93;
     font-size: 1.1rem;
     line-height: 1.6;
+    margin-top: 10px;
 }
 
 .arcade-grid {
@@ -102,6 +110,7 @@ header {
     flex-direction: column;
     padding: 2rem;
     position: relative;
+    text-decoration: none;
     transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -110,9 +119,9 @@ header {
 }
 
 .active-card:hover {
-    border-color: #ff3e3e;
+    border-color: var(--terminal-accent);
     transform: translate(-4px, -4px);
-    box-shadow: 6px 6px 0px #ff3e3e;
+    box-shadow: 6px 6px 0px var(--terminal-accent);
 }
 
 .locked-card {
@@ -124,7 +133,6 @@ header {
 .card-icon {
     font-size: 3rem;
     margin-bottom: 1.5rem;
-    filter: grayscale(30%);
 }
 
 .card-body {
@@ -157,7 +165,7 @@ header {
 }
 
 .playable {
-    background: #ff3e3e;
+    background: var(--terminal-accent);
     color: #050508;
 }
 
@@ -166,13 +174,33 @@ header {
     color: #52526b;
 }
 
+.floating-insult-node {
+    position: fixed;
+    transform: translate(-50%, -100%);
+    background: #1a0505;
+    border: 1px solid #ff3333;
+    color: #ff3333;
+    padding: 6px 10px;
+    font-size: 0.7rem;
+    pointer-events: none;
+    z-index: 2000;
+    white-space: nowrap;
+    animation: fadeUpOut 2s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes fadeUpOut {
+    0% { opacity: 1; transform: translate(-50%, -100%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -180%) scale(0.9); }
+}
+
 .shake-active {
-    animation: screenShake 0.15s infinite;
+    animation: screenShake 0.1s infinite alternate;
 }
 
 @keyframes screenShake {
-    0% { transform: translate(2px, 1px) rotate(0deg); }
-    100% { transform: translate(-1px, -2px) rotate(-1deg); }
+    0% { transform: translate(3px, 2px) rotate(0deg); }
+    50% { transform: translate(-2px, -3px) rotate(-0.5deg); }
+    100% { transform: translate(2px, -1px) rotate(0.5deg); }
 }
 
 footer {

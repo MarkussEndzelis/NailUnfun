@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imperfect Circle — NailUnfun Architecture</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Debug Configuration Overlay Matrix -->
+    <div class="matrix-overlay" id="matrixOverlay">
+        <div class="matrix-header">VECTOR GEOMETRY MATRIX</div>
+        <div class="matrix-stat">Cursor Vector: <span id="valCursor">X: 0, Y: 0</span></div>
+        <div class="matrix-stat">Calculated Origin: <span id="valOrigin">X: 0, Y: 0</span></div>
+        <div class="matrix-stat">Mean Radius: <span id="valRadius">0.00px</span></div>
+        <div class="matrix-stat">Standard Deviation: <span id="valDev">0.00</span></div>
+        <div class="matrix-stat">Eccentricity Index: <span id="valEcc">0.00</span></div>
+        <div class="matrix-stat">Perimeter Discontinuity: <span id="valDisc">0.00%</span></div>
+        <div class="matrix-stat">Velocity Dampening: <span id="valVelo">0.00px/ms</span></div>
+        <div class="matrix-stat">Anti-Cheat Check: <span id="valCheat">PASS</span></div>
+    </div>
+
+    <!-- Active Game Control Tower -->
+    <div class="control-tower">
+        <div class="tower-title">OBJECTIVE CORE</div>
+        <p class="tower-instruction">Draw a path with exactly <span class="highlight">18.47% imperfections</span>. True perfection or complete mess results in instant disqualification.</p>
+
+        <div class="live-score-container">
+            <div class="score-node">
+                <span class="node-label">CURRENT EVALUATION</span>
+                <span id="liveScore" class="node-value">0.00%</span>
+            </div>
+            <div class="score-node">
+                <span class="node-label">STRUCTURAL MATCH</span>
+                <span id="structureMatch" class="node-value">PENDING</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Primary Dynamic Drawing Target Canvas -->
+    <div class="canvas-container" id="canvasContainer">
+        <canvas id="drawingCanvas"></canvas>
+        <div class="canvas-crosshair horizontal"></div>
+        <div class="canvas-crosshair vertical"></div>
+        <div id="canvasWarning" class="canvas-warning-text"></div>
+    </div>
+
+    <!-- Logs and Console Pipeline Outputs -->
+    <div class="console-pipeline" id="consolePipeline">
+        <div class="log-line text-muted">[SYSTEM] Core Vector Engine loaded successfully.</div>
+        <div class="log-line text-muted">[SYSTEM] Awaiting primary stroke path input topology...</div>
+    </div>
+
+    <!-- Interface Navigation Controls -->
+    <div class="action-dock">
+        <button class="btn btn-danger" id="btnClear">PURGE CANVAS DATA</button>
+        <button class="btn btn-success" id="btnSubmit">SUBMIT DATA FOR VERIFICATION</button>
+    </div>
+
+    <a href="../index.html" class="back-link">&larr; back to hub</a>
+
+    <script src="game.js"></script>
+</body>
+</html>
