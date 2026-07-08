@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lose Bill Gates' Money - NailUnfun</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1 class="logo">lose bill gates' <span>money</span></h1>
+            <p class="tagline">Spend it all to zero. Hyperinflation says no.</p>
+        </header>
+
+        <main class="wallet-panel">
+            <div class="balance-block">
+                <span class="balance-label">CURRENT NET WORTH</span>
+                <span id="balanceDisplay" class="balance-value">$150,000,000,000</span>
+                <span id="inflationTicker" class="inflation-ticker">+0.00% / tick</span>
+            </div>
+
+            <div class="stats-row">
+                <div class="stat-node">
+                    <span class="stat-label">TOTAL SPENT</span>
+                    <span id="totalSpent" class="stat-value">$0</span>
+                </div>
+                <div class="stat-node">
+                    <span class="stat-label">TIME ELAPSED</span>
+                    <span id="timeElapsed" class="stat-value">0s</span>
+                </div>
+            </div>
+
+            <div class="purchase-grid" id="purchaseGrid"></div>
+
+            <div class="console-pipeline" id="consolePipeline">
+                <div class="log-line text-muted">[SYSTEM] Fortune loaded. Good luck.</div>
+            </div>
+        </main>
+
+        <a href="../index.html" class="back-link">&larr; back to hub</a>
+
+        <script src="game.js"></script>
+    </body>
+</html>
