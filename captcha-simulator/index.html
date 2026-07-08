@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Captcha Simulator - NailUnfun</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <div class="hud">
+            <div class="hud-stat">
+                <span class="hud-label">ROUNDS VERFIED</span>
+                <span id="roundCount" class="hud-value">0 / 5</span>
+            </div>
+            <div class="hud-stat">
+                <span class="hud-label">REJECTIONS</span>
+                <span id="rejectCount" class="hud-value">0</span>
+            </div>
+        </div>
+
+        <header>
+            <h1 class="logo">humanity <span>verification</span></h1>
+            <p class="tagline">Prove you are not a robot. Being right wont help you.</p>
+        </header>
+
+        <main class="captcha-panel">
+            <div class="instruction-bar">
+                Select all squares with <span id="targetLabel" class="target-highlight">TRAFFIC LIGHTS</span>
+            </div>
+
+            <div id="grid" class="grid"></div>
+
+            <div class="result-line" id="resultLine">Awaiting selection...</div>
+
+            <div class="action-dock">
+                <button class="btn btn-danger" id="btnReset">RESHUFFLE</button>
+                <button class="btn btn-success" id="btnVerify">VERIFY</button>
+            </div>
+
+        </main>
+
+        <a href="captcha-simulator/index.html" class="back-link">&larr; back to hub</a>
+
+        <script src="game.js"></script>
+
+    </body>
+</html>
