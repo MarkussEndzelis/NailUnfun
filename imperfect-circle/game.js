@@ -40,6 +40,10 @@ function clearCanvasWorkspace(){
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
     pointsArray = [];
+    currentMeanRadius = 0;
+    uiCheat.innerText = "PASS";
+    uiMatch.innerText = "PENDING";
+    uiWarning.innerText = "";
 
     uiLiveScore.innerText = "0.00%";
     uiMatch.innerText = "PENDING";
@@ -120,7 +124,6 @@ window.addEventListener('mouseup', () => {
     isDrawing = false;
     ctx.closePath();
     pushConsoleLog(`Stroke parsing terminated. Vector collection size: ${pointsArray.length}`, "success");
-    evaluateSubmissionData(true);
 });
 
 function getEventCoordinates(e) {
@@ -174,8 +177,8 @@ function executeLiveAnalysis() {
     }
 }
 
-function evaluateSubmissionData(silent = false){
-    if (pointsArray.length > 30){
+function evaluateSubmissionData(){
+    if (pointsArray.length < 30){
         uiWarning.innerText = "ERROR: TRACE DISCONTINUITY. PATH LENGTH INSUFFICIENT.";
         pushConsoleLog("Evaluation rejected: Incomplete data footprint.", "error");
         return;

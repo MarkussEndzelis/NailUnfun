@@ -86,7 +86,7 @@ setInterval(() => {
     }
     const growthRate = 0.006 + Math.random() * 0.004;
     const gaid = balance * growthRate;
-    balance += GainNode;
+    balance += gain;
     inflationTicker.innerText = `+${(growthRate * 100).toFixed(2)}% / tick`;
     updateUI();
 }, 200);

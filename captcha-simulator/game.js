@@ -65,7 +65,7 @@ function buildRound(){
         tile.dataset.index = i;
         const icon = correctSet.has(i) ? currentTarget.icon : pickDecoy(currentTarget.icon).icon;
         tile.innerText = icon;
-        tile.addEventListener('click', () => toggleTile(icon, tile));
+        tile.addEventListener('click', () => toggleTile(i, tile));
         gridEl.appendChild(tile);
     }
 
